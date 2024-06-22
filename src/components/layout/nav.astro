@@ -1,1 +1,21 @@
-<nav></nav>
+---
+import Icon from '../common/icon.astro';
+import { icon, menu, menuItem, nav, navWrapper } from './nav.css';
+---
+
+<nav class={navWrapper}>
+  <div class={nav}>
+    <a class={icon}>
+      <Icon name='magnifying-glass' size={20} />
+    </a>
+    <div class={menu}>
+      <a class={menuItem} href='#projects' data-selected>소개</a>
+      <a class={menuItem} href='#projects'>작업</a>
+      <a class={menuItem} href='#blog'>연락처</a>
+      <a class={menuItem} href='#blog'>블로그</a>
+    </div>
+    <a class={icon}>
+      <Icon name='github-logo' size={20} />
+    </a>
+  </div>
+</nav>

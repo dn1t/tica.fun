@@ -1,6 +1,9 @@
 ---
 import '../../global.css';
 import '../../theme.css';
+
+import { slotWrapper } from './layout.css';
+import Nav from './nav.astro';
 ---
 
 <html lang='ko'>
@@ -8,6 +11,8 @@ import '../../theme.css';
     <meta charset='utf-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
     <link rel='icon' href='/favicon.svg' />
+    <link rel='preload' href='/fonts.css' as='style' />
+    <link rel='stylesheet' href='/fonts.css' />
     <title>David Lee</title>
     <script
       is:inline
@@ -15,7 +20,10 @@ import '../../theme.css';
     />
   </head>
   <body>
-    <slot />
+    <Nav />
+    <div class={slotWrapper}>
+      <slot />
+    </div>
     <script>
       import { init } from '../../stores/theme';
       init();

@@ -34,6 +34,14 @@ globalStyle('*::selection', {
   },
 });
 
+globalStyle("[data-theme='dark'] *::selection", {
+  '@layer': {
+    [layers.theme]: {
+      color: vars.colors.black,
+    },
+  },
+});
+
 globalStyle('body', {
   '@layer': {
     [layers.theme]: {

@@ -1,7 +1,30 @@
 ---
-import RootLayout from '../components/layout/root-layout.astro';
+import { Image } from 'astro:assets';
+import RootLayout from '../components/layout/layout.astro';
+import logoSvg from '../logo.svg';
+import {
+  heroDescription,
+  heroHeading,
+  heroSection,
+  logo,
+  projectsGrid,
+  projectsHeading,
+  projectsSection,
+} from './index.css';
 ---
 
 <RootLayout>
-  <h1>Hello, world!</h1>
+  <section class={heroSection}>
+    <Image class={logo} src={logoSvg} alt='Profile Image' />
+    <h1 class={heroHeading}>david lee</h1>
+    <h2 class={heroDescription}>
+      아름다운 웹 사이트와 앱을 만드는
+      <br />
+      고등학생 개발자 이다윗입니다.
+    </h2>
+  </section>
+  <section class={projectsSection}>
+    <h2 class={projectsHeading}>작업</h2>
+    <div class={projectsGrid}></div>
+  </section>
 </RootLayout>
