@@ -1,7 +1,6 @@
 ---
-import '../styles/global.css';
-import '../styles/reset.css';
-import '../styles/theme.css';
+import '../../global.css';
+import '../../theme.css';
 ---
 
 <html lang='ko'>
@@ -18,7 +17,7 @@ import '../styles/theme.css';
   <body>
     <slot />
     <script>
-      import { init } from '../stores/theme';
+      import { init } from '../../stores/theme';
       init();
     </script>
   </body>

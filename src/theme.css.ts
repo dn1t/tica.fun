@@ -2,7 +2,7 @@ import {
   createGlobalTheme,
   createGlobalThemeContract,
 } from '@vanilla-extract/css';
-import { getColors, getVarContract } from '../utils/colors';
+import { getColors, getVarContract } from './utils/colors';
 
 const [lightColors, darkColors] = getColors('gray', 'blue');
 

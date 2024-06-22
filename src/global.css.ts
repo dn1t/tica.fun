@@ -1,6 +1,47 @@
-import { globalStyle } from '@vanilla-extract/css';
-import layers from './layers.css';
+import { globalStyle, layer } from '@vanilla-extract/css';
 import { vars } from './theme.css';
+
+const reset = layer('reset');
+const theme = layer('theme');
+const layers = { reset, theme };
+
+globalStyle(':root', {
+  '@layer': {
+    [layers.theme]: {
+      WebkitFontSmoothing: 'antialiased',
+      MozOsxFontSmoothing: 'grayscale',
+      colorScheme: 'light',
+      fontSynthesis: 'none',
+      textRendering: 'optimizeLegibility',
+    },
+  },
+});
+
+globalStyle("[data-theme='dark']", {
+  '@layer': {
+    [layers.theme]: {
+      colorScheme: 'dark',
+    },
+  },
+});
+
+globalStyle('*::selection', {
+  '@layer': {
+    [layers.theme]: {
+      backgroundColor: vars.colors.blue.step9,
+      color: vars.colors.white,
+    },
+  },
+});
+
+globalStyle('body', {
+  '@layer': {
+    [layers.theme]: {
+      minHeight: '100vh',
+      backgroundColor: vars.colors.gray.step1,
+    },
+  },
+});
 
 globalStyle('*, ::before, ::after', {
   '@layer': {
