@@ -1,0 +1,28 @@
+{
+  "name": "tica.fun",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "biome check"
+  },
+  "dependencies": {
+    "@nanostores/persistent": "^0.10.1",
+    "@radix-ui/colors": "^3.0.0",
+    "@vanilla-extract/css": "^1.15.3",
+    "astro": "^4.11.0",
+    "nanostores": "^0.10.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.2",
+    "@types/bun": "latest",
+    "@vanilla-extract/vite-plugin": "^4.0.11",
+    "typescript": "^5.5.2"
+  },
+  "trustedDependencies": ["@biomejs/biome", "esbuild", "sharp"],
+  "prettier": {
+    "singleQuote": true,
+    "jsxSingleQuote": true
+  }
+}

@@ -1,0 +1,25 @@
+---
+import '../styles/global.css';
+import '../styles/reset.css';
+import '../styles/theme.css';
+---
+
+<html lang='ko'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <link rel='icon' href='/favicon.svg' />
+    <title>David Lee</title>
+    <script
+      is:inline
+      set:html={`(()=>{const e=localStorage.getItem("theme");document.documentElement.dataset.theme="light"===e||"dark"===e?e:matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"})()`}
+    />
+  </head>
+  <body>
+    <slot />
+    <script>
+      import { init } from '../stores/theme';
+      init();
+    </script>
+  </body>
+</html>
