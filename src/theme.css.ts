@@ -4,7 +4,7 @@ import {
 } from '@vanilla-extract/css';
 import { getColors, getVarContract } from './utils/colors';
 
-const [lightColors, darkColors] = getColors('gray', 'blue');
+const [lightColors, darkColors] = getColors('gray');
 
 const fonts = {
   display: "Onest, 'Pretendard Variable', sans-serif",

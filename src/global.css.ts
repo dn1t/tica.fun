@@ -28,7 +28,7 @@ globalStyle("[data-theme='dark']", {
 globalStyle('*::selection', {
   '@layer': {
     [layers.theme]: {
-      backgroundColor: vars.colors.blue.step9,
+      backgroundColor: vars.colors.gray.step12,
       color: vars.colors.white,
     },
   },
