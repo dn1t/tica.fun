@@ -1,0 +1,23 @@
+---
+import type { icons } from '@iconify-json/ph/icons.json';
+import type { suffixes } from '@iconify-json/ph/metadata.json';
+import { Icon as AstroIcon } from 'astro-icon/components';
+
+type Weights = keyof typeof suffixes;
+type Icons<T = keyof typeof icons> = T extends `${infer Icon}-${Weights}`
+  ? Icon
+  : T;
+
+type AstroIconProps = Parameters<typeof AstroIcon>[0];
+interface Props extends AstroIconProps {
+  name: Icons;
+  weight?: 'regular' | Exclude<Weights, ''>;
+}
+
+const { name, weight = 'regular', ...rest } = Astro.props;
+---
+
+<AstroIcon
+  {...rest}
+  name={`ph:${name}${weight === 'regular' ? '' : `-${weight}`}`}
+/>

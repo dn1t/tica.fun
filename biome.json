@@ -21,12 +21,25 @@
     "indentWidth": 2
   },
   "javascript": {
+    "globals": ["Astro"],
     "formatter": {
       "enabled": true,
       "quoteStyle": "single",
       "jsxQuoteStyle": "single"
     }
   },
+  "overrides": [
+    {
+      "include": ["*.astro"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useImportType": "off"
+          }
+        }
+      }
+    }
+  ],
   "files": {
     "ignore": [".astro"]
   }
