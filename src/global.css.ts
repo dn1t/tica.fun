@@ -45,7 +45,7 @@ globalStyle("[data-theme='dark'] *::selection", {
 globalStyle('body', {
   '@layer': {
     [layers.theme]: {
-      minHeight: '100vh',
+      minHeight: '100dvh',
       backgroundColor: vars.colors.gray.step1,
     },
   },

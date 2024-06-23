@@ -1,9 +1,15 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from '../../theme.css';
+import { breakpoints, vars } from '../../theme.css';
 
 export const navWrapper = style({
+  position: 'fixed',
   width: '100%',
   paddingTop: 20,
+  '@media': {
+    [`(max-width: ${breakpoints.xs})`]: {
+      bottom: 16,
+    },
+  },
 });
 
 export const nav = style({

@@ -12,7 +12,10 @@ const fonts = {
   mono: "'JetBrains Mono', 'Pretendard Variable', sans-serif",
 };
 
-const breakpoints = {
+export const breakpoints = {
+  '3xs': '383px',
+  '2xs': '447px',
+  xs: '511px',
   sm: '639px',
   md: '767px',
   lg: '1023px',

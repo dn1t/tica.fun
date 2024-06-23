@@ -2,7 +2,7 @@
 import '../../global.css';
 import '../../theme.css';
 
-import { backgroundGradient, slotWrapper } from './layout.css';
+import { backgroundGradient, body } from './layout.css';
 import Nav from './nav.astro';
 ---
 
@@ -13,18 +13,16 @@ import Nav from './nav.astro';
     <link rel='icon' href='/favicon.svg' />
     <link rel='preload' href='/fonts.css' as='style' />
     <link rel='stylesheet' href='/fonts.css' />
-    <title>David Lee</title>
+    <title>imtica</title>
     <script
       is:inline
       set:html={`(()=>{const e=localStorage.getItem("theme");document.documentElement.dataset.theme="light"===e||"dark"===e?e:matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"})()`}
     />
   </head>
-  <body>
+  <body class={body}>
     <div class={backgroundGradient}></div>
     <Nav />
-    <div class={slotWrapper}>
-      <slot />
-    </div>
+    <slot />
     <script>
       import { init } from '../../stores/theme';
       init();

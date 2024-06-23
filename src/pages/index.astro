@@ -1,30 +1,33 @@
 ---
 import { Image } from 'astro:assets';
+import Icon from '../components/common/icon.astro';
 import RootLayout from '../components/layout/layout.astro';
 import logoSvg from '../logo.svg';
-import {
-  heroDescription,
-  heroHeading,
-  heroSection,
-  logo,
-  projectsGrid,
-  projectsHeading,
-  projectsSection,
-} from './index.css';
+import { cta, ctaWrapper, description, intro, logo, name } from './index.css';
 ---
 
 <RootLayout>
-  <section class={heroSection}>
+  <section class={intro}>
     <Image class={logo} src={logoSvg} alt='Profile Image' />
-    <h1 class={heroHeading}>david lee</h1>
-    <h2 class={heroDescription}>
+    <h1 class={name}>david lee</h1>
+    <h2 class={description}>
       아름다운 웹 사이트와 앱을 만드는
       <br />
       고등학생 개발자 이다윗입니다.
     </h2>
-  </section>
-  <section class={projectsSection}>
-    <h2 class={projectsHeading}>작업</h2>
-    <div class={projectsGrid}></div>
+    <div class={ctaWrapper}>
+      <a class={cta} href='/projects'>
+        작업
+        <Icon name='arrow-right' weight='bold' size={18} />
+      </a>
+      <a class={cta} href='/contact'>
+        연락처
+        <Icon name='arrow-right' weight='bold' size={18} />
+      </a>
+      <a class={cta} href='/blog'>
+        블로그
+        <Icon name='arrow-right' weight='bold' size={18} />
+      </a>
+    </div>
   </section>
 </RootLayout>
