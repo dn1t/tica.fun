@@ -1,6 +1,7 @@
 ---
 import Icon from '../common/icon.astro';
-import { icon, menu, menuItem, nav, navWrapper } from './nav.css';
+import NavMenuItem from './nav-menu-item.astro';
+import { icon, menu, nav, navWrapper } from './nav.css';
 ---
 
 <nav class={navWrapper}>
@@ -9,10 +10,10 @@ import { icon, menu, menuItem, nav, navWrapper } from './nav.css';
       <Icon name='magnifying-glass' size={20} />
     </a>
     <div class={menu}>
-      <a class={menuItem} href='/' data-selected>소개</a>
-      <a class={menuItem} href='/projects'>작업</a>
-      <a class={menuItem} href='/contact'>연락처</a>
-      <a class={menuItem} href='/blog'>블로그</a>
+      <NavMenuItem href='/'>소개</NavMenuItem>
+      <NavMenuItem href='/projects'>작업</NavMenuItem>
+      <NavMenuItem href='/contact'>연락처</NavMenuItem>
+      <NavMenuItem href='/blog'>블로그</NavMenuItem>
     </div>
     <a class={icon}>
       <Icon name='github-logo' size={20} />

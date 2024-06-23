@@ -1,0 +1,18 @@
+---
+import { menuItem } from './nav.css';
+
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+const { pathname } = Astro.url;
+---
+
+<a
+  class={menuItem}
+  href={href}
+  data-selected={href !== '/' ? pathname.startsWith(href) : pathname === '/'}
+>
+  <slot />
+</a>
