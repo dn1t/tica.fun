@@ -2,7 +2,7 @@
 import '../../global.css';
 import '../../theme.css';
 
-import { slotWrapper } from './layout.css';
+import { backgroundGradient, slotWrapper } from './layout.css';
 import Nav from './nav.astro';
 ---
 
@@ -20,6 +20,7 @@ import Nav from './nav.astro';
     />
   </head>
   <body>
+    <div class={backgroundGradient}></div>
     <Nav />
     <div class={slotWrapper}>
       <slot />

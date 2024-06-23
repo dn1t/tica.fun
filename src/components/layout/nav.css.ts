@@ -15,7 +15,7 @@ export const nav = style({
   height: 44,
   padding: '3px 16px',
   margin: '0 auto',
-  backgroundColor: vars.colors.gray.step3,
+  backgroundColor: `color-mix(in srgb, ${vars.colors.gray.step3}, transparent 50%)`,
   border: `1px solid ${vars.colors.gray.step4}`,
   borderRadius: 22,
 });
