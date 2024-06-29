@@ -1,0 +1,14 @@
+---
+import { projectName } from '../../pages/index.css';
+
+interface Props {
+  emoji: string;
+  name: string;
+}
+
+const { emoji, name } = Astro.props;
+---
+
+<div>
+  <h2 class={projectName}>{emoji} {name}</h2>
+</div>

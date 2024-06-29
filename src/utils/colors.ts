@@ -11,6 +11,8 @@ type RemoveA<T extends string> = RemoveP3<
 export type ColorNames = RemoveA<keyof typeof radixColors>;
 
 export type Colors<T extends ColorNames = ColorNames> = {
+  foreground: string;
+  background: string;
   black: string;
   white: string;
 } & {
@@ -32,10 +34,14 @@ export type Colors<T extends ColorNames = ColorNames> = {
 
 export function getColors<T extends ColorNames>(...colors: T[]) {
   const lightColorEntries = [
+    ['foreground', '#000000'],
+    ['background', '#ffffff'],
     ['black', '#000000'],
     ['white', '#ffffff'],
   ];
   const darkColorEntries = [
+    ['foreground', '#ffffff'],
+    ['background', '#000000'],
     ['black', '#000000'],
     ['white', '#ffffff'],
   ];

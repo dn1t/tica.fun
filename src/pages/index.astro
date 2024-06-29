@@ -1,33 +1,50 @@
 ---
-import { Image } from 'astro:assets';
 import Icon from '../components/common/icon.astro';
+import ProjectCard from '../components/index/project-card.astro';
 import RootLayout from '../components/layout/layout.astro';
-import logoSvg from '../logo.svg';
-import { cta, ctaWrapper, description, intro, logo, name } from './index.css';
+import {
+  contentContainer,
+  cta,
+  ctaIcon,
+  ctaWrapper,
+  description,
+  focused,
+  intro,
+  introWrapper,
+} from './index.css';
 ---
 
 <RootLayout>
-  <section class={intro}>
-    <Image class={logo} src={logoSvg} alt='Profile Image' />
-    <h1 class={name}>david lee</h1>
-    <h2 class={description}>
-      아름다운 웹 사이트와 앱을 만드는
-      <br />
-      고등학생 개발자 이다윗입니다.
-    </h2>
-    <div class={ctaWrapper}>
-      <a class={cta} href='/projects'>
-        작업
-        <Icon name='arrow-right' weight='bold' size={18} />
-      </a>
-      <a class={cta} href='/contact'>
-        연락처
-        <Icon name='arrow-right' weight='bold' size={18} />
-      </a>
-      <a class={cta} href='/blog'>
-        블로그
-        <Icon name='arrow-right' weight='bold' size={18} />
-      </a>
+  <section class={introWrapper}>
+    <div class={intro}>
+      <div class={contentContainer}>
+        <h2 class={description}>
+          <span class={focused}>
+            안녕하세요, 고등학생 개발자 이다윗입니다.
+          </span>
+          새로운 기술을 활용해 아름다운 웹 사이트와 앱을 만드는 것을 좋아합니다.
+        </h2>
+        <div class={ctaWrapper}>
+          <a class={cta} href='/projects'>
+            <Icon class={ctaIcon} name='arrow-right' weight='bold' />
+            작업
+          </a>
+          <a class={cta} href='/contact'>
+            <Icon class={ctaIcon} name='arrow-right' weight='bold' />
+            연락처
+          </a>
+          <a class={cta} href='/blog'>
+            <Icon class={ctaIcon} name='arrow-right' weight='bold' />
+            블로그
+          </a>
+        </div>
+      </div>
     </div>
+  </section>
+  <section>
+    <ProjectCard emoji='⚡' name='remote-kakao' />
+    <ProjectCard emoji='👋' name='Hello, world!' />
+    <ProjectCard emoji='🔑' name='SolveEncoder' />
+    <ProjectCard emoji='🌐' name='The NoIE License' />
   </section>
 </RootLayout>

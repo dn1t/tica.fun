@@ -4,9 +4,10 @@ import { breakpoints, vars } from '../../theme.css';
 export const navWrapper = style({
   position: 'fixed',
   width: '100%',
-  paddingTop: 20,
+  top: 16,
   '@media': {
     [`(max-width: ${breakpoints.xs})`]: {
+      top: 'unset',
       bottom: 16,
     },
   },
@@ -24,6 +25,12 @@ export const nav = style({
   backgroundColor: `color-mix(in srgb, ${vars.colors.gray.step3}, transparent 50%)`,
   border: `1px solid ${vars.colors.gray.step4}`,
   borderRadius: 22,
+  backdropFilter: 'blur(8px)',
+});
+
+export const logo = style({
+  width: 20,
+  height: 20,
 });
 
 export const icon = style({});
@@ -42,13 +49,22 @@ export const menuItem = style({
   fontSize: 16,
   lineHeight: 'unset',
   borderRadius: 18,
+  transitionProperty: 'background-color',
+  transitionDuration: '0.15s',
+  transitionTimingFunction: 'ease-in-out',
   selectors: {
     '&[data-selected]': {
       backgroundColor: vars.colors.gray.step1,
       border: `1px solid ${vars.colors.gray.step4}`,
     },
+    '&:not([data-selected]):hover': {
+      backgroundColor: `color-mix(in srgb, ${vars.colors.gray.step2}, transparent 50%)`,
+    },
     "[data-theme='dark'] &[data-selected]": {
       backgroundColor: vars.colors.gray.step6,
+    },
+    "[data-theme='dark'] &:not([data-selected]):hover": {
+      backgroundColor: `color-mix(in srgb, ${vars.colors.gray.step7}, transparent 65%)`,
     },
   },
 });

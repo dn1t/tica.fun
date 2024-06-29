@@ -1,13 +1,15 @@
 ---
+import { Image } from 'astro:assets';
+import logoSvg from '../../logo.svg';
 import Icon from '../common/icon.astro';
 import NavMenuItem from './nav-menu-item.astro';
-import { icon, menu, nav, navWrapper } from './nav.css';
+import { icon, logo, menu, nav, navWrapper } from './nav.css';
 ---
 
 <nav class={navWrapper}>
   <div class={nav}>
     <a class={icon}>
-      <Icon name='magnifying-glass' size={20} />
+      <Image class={logo} src={logoSvg} alt='Profile Image' />
     </a>
     <div class={menu}>
       <NavMenuItem href='/'>소개</NavMenuItem>
